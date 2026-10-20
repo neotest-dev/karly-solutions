@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* ─── Variables de tema Karly Solutions ───────────────────────────────────────
+   Paleta: naranja (acento), verde oscuro (secundario), blanco (fondo), negro (texto)
+   Compatible con shadcn/ui (CSS variables)
+──────────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Colores base */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 9%;
+
+  /* Tarjetas y superficies */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+
+  /* Popovers */
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+
+  /* Acento principal: naranja */
+  --primary: 24 95% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secundario: verde oscuro */
+  --secondary: 155 45% 22%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* Neutro muted */
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 40%;
+
+  /* Acento suave (hover states) */
+  --accent: 24 95% 96%;
+  --accent-foreground: 24 95% 30%;
+
+  /* Estados destructivos */
+  --destructive: 0 84% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Bordes, inputs, anillo de foco */
+  --border: 0 0% 88%;
+  --input: 0 0% 88%;
+  --ring: 24 95% 50%;
+
+  /* Radio de bordes (shadcn/ui) */
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar-background: 155 45% 18%;
+  --sidebar-foreground: 0 0% 95%;
+  --sidebar-primary: 24 95% 55%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 155 45% 25%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 155 45% 25%;
+  --sidebar-ring: 24 95% 50%;
+
+  /* Charts (para dashboard) */
+  --chart-1: 24 95% 50%;
+  --chart-2: 155 45% 35%;
+  --chart-3: 200 70% 45%;
+  --chart-4: 45 90% 50%;
+  --chart-5: 0 84% 55%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
